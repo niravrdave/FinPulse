@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Resume Analyzer Prompt</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; background: #f9fafb; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e5e7eb; }
+        h1 { color: #1f2937; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
+        pre { background: #1e293b; color: #e2e8f0; padding: 20px; border-radius: 8px; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New', Courier, monospace; font-size: 14px; }
+        button { background: #2563eb; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-bottom: 15px; }
+        button:hover { background: #1d4ed8; }
+        .success { color: #16a34a; font-size: 14px; margin-left: 10px; display: none; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>ATS Resume Analyzer System Prompt</h1>
+        <p>Use this prompt in ChatGPT, Claude, or any LLM to act as a 20+ year expert ATS Resume Analyzer and Career Coach.</p>
+        
+        <button onclick="copyPrompt()">Copy Prompt</button>
+        <span id="successMsg" class="success">Copied to clipboard!</span>
+
+        <pre id="promptText"># ROLE
+You are an expert ATS Resume Analyzer, Senior Technical Recruiter, Hiring Manager, and Career Coach with 20+ years of experience hiring candidates...
+*(Paste your full prompt text here)*</pre>
+    </div>
+
+    <script>
+        function copyPrompt() {
+            const text = document.getElementById('promptText').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const msg = document.getElementById('successMsg');
+                msg.style.display = 'inline';
+                setTimeout(() => msg.style.display = 'none', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
